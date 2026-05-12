@@ -8,7 +8,7 @@
   "server": {
     "ip": "19jtlahansawit.aternos.me",
     "port": 29413,
-    "version": "26.1.2",
+    "version": "1.21",
     "try-creative": false
   },
   "position": {
@@ -27,7 +27,7 @@
       "sneak": true
     },
     "chat-messages": {
-      "enabled": true,
+      "enabled": false,
       "repeat": true,
       "repeat-delay": 120,
       "messages": [
