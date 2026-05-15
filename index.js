@@ -1286,13 +1286,24 @@ function createBot() {
         }
       }, 3000);
 
-      // Auto TP accept (every 5 secs)
+      // ==========================================
+      // AUTO TP-ACCEPT DEBUG LOOP
+      // ==========================================
+      addLog('[AutoTP] Timer successfully registered!'); // Tells us the code is actually loaded
+      
       addInterval(() => {
-        if (bot && botState.connected) {
+        addLog('[AutoTP] Timer is ticking...'); // Tells us the loop is running
+        
+        if (!bot) {
+          addLog('[AutoTP] Failed: Bot object is missing.');
+        } else if (!botState.connected) {
+          addLog('[AutoTP] Failed: Bot is disconnected.');
+        } else {
           bot.chat('/tpaccept');
-          addLog('[AutoTP] Send command /tpaccept');
+          addLog('[AutoTP] Success: /tpaccept sent to server!');
         }
       }, 5000);
+      // ==========================================
 
       bot.on("messagestr", (message) => {
         if (
