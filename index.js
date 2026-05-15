@@ -1290,6 +1290,7 @@ function createBot() {
       addInterval(() => {
         if (bot && botState.connected) {
           bot.chat('/tpaccept');
+          addLog('[AutoTP] Send command /tpaccept');
         }
       }, 5000);
 
