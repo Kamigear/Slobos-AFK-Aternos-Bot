@@ -1286,6 +1286,13 @@ function createBot() {
         }
       }, 3000);
 
+      // Auto TP accept (every 5 secs)
+      addInterval(() => {
+        if (bot && botState.connected) {
+          bot.chat('/tpaccept');
+        }
+      }, 5000);
+
       bot.on("messagestr", (message) => {
         if (
           message.includes("commands.gamemode.success.self") ||
